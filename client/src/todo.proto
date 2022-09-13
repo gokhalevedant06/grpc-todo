@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+service Todo {
+    rpc addTask(AddTaskRequest) returns (AddTaskResponse);
+    rpc viewTasks(ViewTaskRequest) returns (ViewTaskResponse);
+    // rpc DeleteTasks(DeleteTaskRequest) returns (DeleteTaskResponse);
+    // rpc UpdateTasks(UpdateTaskRequest) returns (UpdateTaskResponse);
+}
+
+message AddTaskRequest {
+    string title = 1;
+    string description = 2;
+}
+
+message AddTaskResponse {
+    string response = 1;
+}
+
+message ViewTaskRequest {}
+
+message ViewTaskResponse {
+    repeated AddTaskRequest tasks = 1;
+}
+
+
+
+
+
+
